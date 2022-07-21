@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" 
+    content="width=device-width, initial-scale=1" />
+  <meta name="keywords" 
+    content="{{page_meta.meta_keywords}}" />
+  <meta name="description" 
+    content="{{page_meta.meta_description}}" />
+  <title>{{page_meta.title}}</title>
+</head>
+<body>
+  <div class="page">
+      <div class="container">
+      <header class="header">
+        <div class="header-wrapper">
+          <div class="menu-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="info">
+            <i class="bi bi-truck logo"></i>
+            <h1 class="title">{{page_meta.h1}}</h1>
+          </div>
+        </div>
+        <div class="header-wrapper">
+          <nav class="menu">
+            <i class="bi bi-x-lg"></i>
+            <ul class="nav nav-pills nav-fill">
+              {{#each nav}}
+                <li class="nav-item">
+                  <a class="nav-link" href="{{this.href}}">{{this.text}}</a>
+                </li>
+              {{/each}}
+            </ul>
+          </nav>
+          <div class="input-group">
+            <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+            <button type="button" class="btn btn-outline-primary">Search</button>
+          </div>
+        </div>
+      </header>
+      <main class="content">
+        <div class="content-wrapper">
+          <div class="filter-wrapper">
+            <div class="filter">
+              <h4 class="filter-name">Type</h4>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="type1" checked>
+                <label class="form-check-label" for="type1">
+                  Curtainsider truck
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="type2" checked>
+                <label class="form-check-label" for="type2">
+                  Cab chassis truck
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="type3">
+                <label class="form-check-label" for="type3">
+                  Container transporter / swap body truck
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="type4">
+                <label class="form-check-label" for="type4">
+                  Box truck
+                </label>
+              </div>
+            </div>
+            <div class="filter">
+              <h4 class="filter-name">Axle configuration</h4>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="axle1" checked>
+                <label class="form-check-label" for="axle1">
+                  6x2
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="axle2">
+                <label class="form-check-label" for="axle2">
+                  4x4
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="axle3">
+                <label class="form-check-label" for="axle3">
+                  4x2
+                </label>
+              </div>
+            </div>
+            <div class="filter">
+              <h4 class="filter-name">Power</h4>
+              <label for="power" class="form-label">380 hp</label>
+              <input type="range" class="form-range" min="300" max="460" step="10" id="power">
+            </div>
+            <div class="filter-buttons">
+              <button type="button" class="btn btn-outline-success">Search</button>
+              <button type="button" class="btn btn-outline-primary">Reset</button>
+            </div>
+          </div>
+          <div class="stock">
+            <div class="container">
+              <nav aria-label="navigation example">
+                <ul class="pagination justify-content-center">
+                  <li class="page-item disabled">
+                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                </li>
+                  <li class="page-item"><a class="page-link" href="#">1</a></li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">Next</a>
+                  </li>
+                </ul>
+              </nav>
+              <div class="dropdown sort">
+                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
+                  Sort by
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <li><a class="dropdown-item" href="#">Option</a></li>
+                  <li><a class="dropdown-item" href="#">Option</a></li>
+                  <li><a class="dropdown-item" href="#">Option</a></li>
+                </ul>
+              </div>
+            </div>
+            <ul class="nav stock">
+              {{#each stock}}
+                <li class="card-item d-flex">
+                  <img class="card-img" src="../img/{{this.image}}" alt="{{this.type}}" />
+                  <div class="card-body">
+                    <h4>{{this.title}}</h4>
+                    <p>Model: {{this.model}}</p>
+                    <p>Type: {{this.type}}</p>
+                    <p>Mileage: {{this.mileage}} {{this.mileage_measure}}</p>
+                  </div>
+                  <div class="card-price">
+                    <p>{{this.price}} {{this.price_currency}}</p>
+                  </div>
+                </li>
+              {{/each}}
+            </ul>
+          </div>
+        </div>
+        <div class="page-text">
+          {{#each page_text}}
+            <{{this.tag}}>{{this.content}}</{{this.tag}}>
+          {{/each}}
+        </div>
+      </main>
+    </div>
+    <footer class="footer">
+      <div class="footer-container container">
+        <div class="footer-wrapper">
+          <h2 class="footer-title">
+            <i class="bi bi-truck logo"></i>
+            {{page_meta.h1}}
+          </h2>
+          <div class="footer-social">
+            <a href="#" class="social-link">
+              <i class="bi bi-facebook"></i>
+            </a>
+            <a href="#" class="social-link">
+              <i class="bi bi-instagram"></i>
+            </a>
+            <a href="#" class="social-link">
+              <i class="bi bi-twitter"></i>
+            </a>
+          </div>
+        </div>
+        <div class="footer-details">
+          <div class="footer-phone">
+            <p>Tel:</p>
+            <a href="tel:+3250312832">+32 50 31 28 32</a> 
+          </div>
+          <div class="footer-address">
+            <p>Address:</p>
+            <a href="#">491 Merlin Crest Suite 963</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
