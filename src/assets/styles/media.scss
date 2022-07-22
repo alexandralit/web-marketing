@@ -43,6 +43,10 @@
       align-items: flex-start;
       flex-direction: column;
     }
+
+    .nav-link {
+      color: #fff;
+    }
     
     &.active {
       transition: all 0.5s linear;
@@ -183,6 +187,12 @@
 
     .input-group {
       width: auto;
+    }
+  }
+
+  .menu {
+    .nav-link {
+      color: #0d6efd;
     }
   }
 
