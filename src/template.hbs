@@ -11,7 +11,7 @@
 </head>
 <body>
   <div class="page">
-      <div class="container">
+    <div class="container">
       <header class="header">
         <div class="header-wrapper">
           <div class="menu-icon">
@@ -117,17 +117,17 @@
                 </ul>
               </nav>
               <div class="dropdown sort">
-                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
+                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Sort by
                 </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
                   <li><a class="dropdown-item" href="#">Option</a></li>
                   <li><a class="dropdown-item" href="#">Option</a></li>
                   <li><a class="dropdown-item" href="#">Option</a></li>
                 </ul>
               </div>
             </div>
-            <ul class="nav stock">
+            <ul class="nav">
               {{#each stock}}
                 <li class="card-item d-flex">
                   <img class="card-img" src="../img/{{this.image}}" alt="{{this.type}}" />
@@ -145,7 +145,7 @@
             </ul>
           </div>
         </div>
-        <div class="page-text">
+        <div class="content-wrapper">
           {{#each page_text}}
             <{{this.tag}}>{{this.content}}</{{this.tag}}>
           {{/each}}

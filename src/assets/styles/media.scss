@@ -155,6 +155,10 @@
   .content {
     &-wrapper {
       flex-direction: row;
+
+      &:nth-child(2) {
+        flex-direction: column;
+      }
     }
   }
 

@@ -13,6 +13,16 @@ body {
   width: 100%;
   height: 100%;
   background-color: aliceblue;
+
+  scrollbar-width: thin;
+	scrollbar-color: #0d6efd #fff;
+	&::-webkit-scrollbar {
+		background-color: #fff;
+		width: 3px;
+	}
+	&::-webkit-scrollbar-thumb {
+		background-color: #0d6efd;
+	}
 }
 
 a {
@@ -68,16 +78,15 @@ ul {
   .info {
     display: flex;
     align-items: center;
+    color: #6c757d;
   }
 
   .logo {
-    color: #6c757d;
     margin: 0 1rem 0 0;
   }
   
   .title {
     margin: 0.5rem 0;
-    color: #6c757d;
   }
 }
 
@@ -115,6 +124,12 @@ ul {
     align-items: flex-start;
     justify-content: space-between;
     margin-bottom: 2rem;
+
+    &:nth-child(2) {
+      p:last-child {
+        margin-bottom: 1rem;
+      }
+    }
   }
 
   .stock {
@@ -177,12 +192,6 @@ ul {
         margin-right: 0.5rem;
       }
     }
-  }
-}
-
-.page-text {
-  p:last-child {
-    margin-bottom: 1rem;
   }
 }
 
